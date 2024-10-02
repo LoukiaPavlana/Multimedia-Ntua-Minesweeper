@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+  Copyright (c) 2015, 2019, Gluon and/or its affiliates.
+  All rights reserved. Use is subject to license terms.
+
+  This file is available and licensed under the following license:
+
+  Redistribution and use in source and binary forms, with or without
+  modification, are permitted provided that the following conditions
+  are met:
+
+  - Redistributions of source code must retain the above copyright
+    notice, this list of conditions and the following disclaimer.
+  - Redistributions in binary form must reproduce the above copyright
+    notice, this list of conditions and the following disclaimer in
+    the documentation and/or other materials provided with the distribution.
+  - Neither the name of Oracle Corporation nor the names of its
+    contributors may be used to endorse or promote products derived
+    from this software without specific prior written permission.
+
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+  "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+  LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+  A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
+  OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+  SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+  LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+  DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+  THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+  OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox prefHeight="400.0" prefWidth="710.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="minesweeper.multimediaminesweeperv2.Main">
+  <children>
+      <MenuBar id="menuBar" prefHeight="25.0" prefWidth="643.0">
+         <menus>
+            <Menu id="applicationsMenu" mnemonicParsing="false" text="Applications">
+               <items>
+                  <MenuItem id="createItem" fx:id="startOption" mnemonicParsing="false" onAction="#createAction" text="Create" />
+                  <MenuItem id="loadItem;" fx:id="loadOption" mnemonicParsing="false" onAction="#loadAction" text="Load" />
+                  <MenuItem id="startItem" fx:id="exitOption" mnemonicParsing="false" onAction="#startAction" text="Start" />
+                  <MenuItem id="exitItem" fx:id="exitOption1" mnemonicParsing="false" onAction="#exitAction" text="Exit" />
+               </items>
+            </Menu>
+            <Menu id="detailsMenu" mnemonicParsing="false" text="Details">
+               <items>
+                  <MenuItem id="roundsItem" fx:id="roundsOption" mnemonicParsing="false" onAction="#getRoundsAction" text="Rounds" />
+                  <MenuItem id="solutionItem" fx:id="solutionOption" mnemonicParsing="false" onAction="#solutionAction" text="Solution" />
+               </items>
+            </Menu>
+         </menus>
+      </MenuBar>
+      <BorderPane prefHeight="200.0" prefWidth="200.0">
+         <top>
+            <HBox prefHeight="169.0" prefWidth="1200.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Pane layoutX="38.0" layoutY="10.0" prefHeight="100.0" prefWidth="238.0">
+                     <children>
+                        <VBox layoutX="18.0" layoutY="-1.0" prefHeight="102.0" prefWidth="203.0">
+                           <children>
+                              <Label fx:id="MinesLabel" prefHeight="27.0" prefWidth="202.0" text="Number of mines" textAlignment="CENTER">
+                                 <font>
+                                    <Font name="Arial" size="18.0" />
+                                 </font>
+                              </Label>
+                              <Separator prefHeight="21.0" prefWidth="202.0" />
+                           </children>
+                        </VBox>
+                     </children>
+                  </Pane>
+                  <Pane layoutX="38.0" layoutY="10.0" prefHeight="200.0" prefWidth="200.0">
+                     <children>
+                        <VBox prefHeight="102.0" prefWidth="202.0">
+                           <children>
+                              <Label fx:id="MarkedTilesLabel" prefHeight="27.0" prefWidth="203.0" text="Tiles marked" textAlignment="CENTER">
+                                 <font>
+                                    <Font name="Arial" size="18.0" />
+                                 </font>
+                              </Label>
+                              <Separator prefHeight="21.0" prefWidth="186.0" />
+                           </children>
+                        </VBox>
+                     </children>
+                  </Pane>
+                  <Pane layoutX="10.0" layoutY="10.0" prefHeight="100.0" prefWidth="223.0">
+                     <children>
+                        <VBox prefHeight="102.0" prefWidth="202.0">
+                              <Label fx:id="timeLabel" prefHeight="27.0" prefWidth="203.0" text="Time Remaining" textAlignment="CENTER">
+                                 <font>
+                                    <Font name="Arial" size="18.0" />
+                                 </font>
+                              </Label>
+                        </VBox>
+                     </children>
+                  </Pane>
+               </children>
+            </HBox>
+         </top>
+         <center>
+            <HBox prefHeight="395.0" prefWidth="1160.0" BorderPane.alignment="CENTER">
+               <Pane prefHeight="474.0" prefWidth="187.0" />
+               <GridPane fx:id="gridGame" gridLinesVisible="true" layoutX="171.0" layoutY="10.0" prefHeight="474.0" prefWidth="340.0">
+               </GridPane>
+               <Pane layoutX="10.0" layoutY="10.0" prefHeight="474.0" prefWidth="187.0" />
+            </HBox>
+         </center>
+      </BorderPane>
+  </children>
+</VBox>
